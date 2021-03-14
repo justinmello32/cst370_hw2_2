@@ -26,16 +26,28 @@ int main() {
 
     for(int i =0; i < numberOfBoxes; i++) {
 
-        if(table[i] > table[i + 1]) {
-            results.push_back(i);
-            maxApples = maxApples + table[i];
-            i++;
-        }
-        else {
-            results.push_back(i + 1);
-            maxApples = maxApples + table[i + 1];
-            i++;
-        }
+            //Check for one box
+            if(numberOfBoxes == 1){
+                results.push_back(i);
+                maxApples = table[i];
+                break;
+            }
+
+            if(table[i + 2] > table[i] && table[i + 2] > table[i + 1] && i > 1 && i < numberOfBoxes) {
+                results.push_back(i);
+                maxApples = maxApples + table[i + 2];
+                i++;
+            }
+
+            if (table[i] > table[i + 1]) {
+                results.push_back(i);
+                maxApples = maxApples + table[i];
+                i++;
+            } else {
+                results.push_back(i + 1);
+                maxApples = maxApples + table[i + 1];
+                i++;
+            }
 
     }
 
