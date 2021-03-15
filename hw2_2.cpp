@@ -32,13 +32,11 @@ int main() {
                 maxApples = table[i];
                 break;
             }
-
-            if(table[i + 2] > table[i] && table[i + 2] > table[i + 1] && i > 1 && i < numberOfBoxes) {
+            if((i + 1) == numberOfBoxes) {
                 results.push_back(i);
-                maxApples = maxApples + table[i + 2];
-                i++;
+                maxApples = maxApples + table[i];
+                break;
             }
-
             if (table[i] > table[i + 1]) {
                 results.push_back(i);
                 maxApples = maxApples + table[i];
@@ -46,7 +44,7 @@ int main() {
             } else {
                 results.push_back(i + 1);
                 maxApples = maxApples + table[i + 1];
-                i++;
+                i = i + 2;
             }
 
     }
