@@ -7,6 +7,7 @@ int main() {
     int numberOfBoxes = 0;
     int maxApples = 0;
     vector<int> results;
+    vector<int> finalResults;
     cin >> numberOfBoxes;
 
     int table[numberOfBoxes];
@@ -35,9 +36,11 @@ int main() {
         }
     }
 
+    //Calculate max apples
     for(int i = 0; i < numberOfBoxes; i++) {
         if(results[i] == 1) {
             maxApples = maxApples + table[i];
+            finalResults.push_back(i);
         }
     }
 
@@ -46,8 +49,8 @@ int main() {
 
 
     cout << "Boxes:";
-    for (int i = 0; i < results.size(); i++) {
-        cout << results[i] << " ";
+    for(int i = 0; i < finalResults.size(); i++) {
+        cout << finalResults[i] << " ";
     }
     cout << endl;
     cout << "Max Apples:" << maxApples << endl;
