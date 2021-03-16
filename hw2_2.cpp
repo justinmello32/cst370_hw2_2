@@ -11,43 +11,37 @@ int main() {
 
     int table[numberOfBoxes];
 
+    //Get user input
     for(int i = 0; i < numberOfBoxes; i++) {
         cin >> table[i];
     }
 
-//    if(table[0] > table[1]) {
-//        results.push_back(0);
-//        maxApples = maxApples + table[0];
-//    }
-//    else {
-//        results.push_back(1);
-//        maxApples = maxApples + table[1];
-//    }
+    //Sort through records to set higher values
+    for(int i = 0; i < numberOfBoxes; i++) {
 
-    for(int i =0; i < numberOfBoxes; i++) {
-
-            //Check for one box
-            if(numberOfBoxes == 1){
-                results.push_back(i);
-                maxApples = table[i];
-                break;
-            }
-            if((i + 1) == numberOfBoxes) {
-                results.push_back(i);
-                maxApples = maxApples + table[i];
-                break;
-            }
-            if (table[i] > table[i + 1]) {
-                results.push_back(i);
-                maxApples = maxApples + table[i];
-                i++;
-            } else {
-                results.push_back(i + 1);
-                maxApples = maxApples + table[i + 1];
-                i = i + 2;
-            }
-
+        if(table[i] > table[i + 1]) {
+            results.push_back(1);
+        }
+        else {
+            results.push_back(0);
+        }
     }
+
+    //Sort items to make sure no boxes next to each other
+    for(int i = 0; i < numberOfBoxes; i++) {
+        if(results[i] == 1 && results[i + 1] == 1) {
+            results[i + 1] = 0;
+            results[i + 2] = 1;
+        }
+    }
+
+    for(int i = 0; i < numberOfBoxes; i++) {
+        if(results[i] == 1) {
+            maxApples = maxApples + table[i];
+        }
+    }
+
+
 
 
 
