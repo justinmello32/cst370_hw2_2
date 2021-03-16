@@ -2,6 +2,7 @@
 #include <vector>
 
 using namespace std;
+
 int main() {
 
     int numberOfBoxes = 0;
@@ -23,6 +24,7 @@ int main() {
         if(table[i] > table[i + 1]) {
             results.push_back(1);
         }
+
         else {
             results.push_back(0);
         }
@@ -43,9 +45,6 @@ int main() {
             finalResults.push_back(i);
         }
     }
-
-
-
 
 
     cout << "Boxes:";
