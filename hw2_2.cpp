@@ -1,7 +1,8 @@
 /*
  * Title: hw2_2.cpp
  * Abstract: This program collects the maximum number of apples in given 
-             boxes. Selections must not be next to adjacent boxes. 
+             boxes. Selections must not be next to adjacent boxes.
+ * Author: Justin Mello
  * ID: 2002
  * Date: 03/15/2021
  */
