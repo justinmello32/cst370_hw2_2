@@ -1,3 +1,11 @@
+/*
+ * Title: hw2_2.cpp
+ * Abstract: This program collects the maximum number of apples in given 
+             boxes. Selections must not be next to adjacent boxes. 
+ * ID: 2002
+ * Date: 03/15/2021
+ */
+
 #include <iostream>
 #include <vector>
 
